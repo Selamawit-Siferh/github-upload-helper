@@ -1,5 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { useState } from "react";
 
 // Sample document details data
@@ -31,38 +32,72 @@ const Index = () => {
           <CardTitle className="text-2xl font-bold text-center">Document Details</CardTitle>
         </CardHeader>
         <CardContent className="p-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Document Information */}
-            <DocumentDetailItem label="Document Name" value={documentDetail.documentName} />
-            <DocumentDetailItem label="Identification Number" value={documentDetail.identificationNumber} />
-            <DocumentDetailItem label="Document" value={documentDetail.specificDocumentName} />
-            <DocumentDetailItem label="Issued By" value={documentDetail.nameOfIssuingAuthority} />
-            <DocumentDetailItem label="Issued Date" value={documentDetail.issuDate} />
-            <DocumentDetailItem label="Expiry Date" value={documentDetail.expireddate} />
-            <DocumentDetailItem label="Name Of Employer" value={documentDetail.nameOfEmployer} />
-            <DocumentDetailItem label="Address Of Employer" value={documentDetail.addressOfEmployer} />
-            
-            {/* Location Information */}
-            <DocumentDetailItem label="Country" value={documentDetail.country} />
-            <DocumentDetailItem label="State" value={documentDetail.regionStateOrProvince} />
-            <DocumentDetailItem label="City/Town" value={documentDetail.cityOrTown} />
-            <DocumentDetailItem label="Sub City" value={documentDetail.subCity} />
-            <DocumentDetailItem label="District" value={documentDetail.weredaOrDistrict} />
-            <DocumentDetailItem label="Village" value={documentDetail.kebeleOrVillage} />
-            <DocumentDetailItem label="Telephone" value={documentDetail.phoneNumber} />
-          </div>
+          <Table>
+            <TableBody>
+              <TableRow>
+                <TableCell className="font-medium w-1/3">Document Name</TableCell>
+                <TableCell>{documentDetail.documentName}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Identification Number</TableCell>
+                <TableCell>{documentDetail.identificationNumber}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Document</TableCell>
+                <TableCell>{documentDetail.specificDocumentName}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Issued By</TableCell>
+                <TableCell>{documentDetail.nameOfIssuingAuthority}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Issued Date</TableCell>
+                <TableCell>{documentDetail.issuDate}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Expiry Date</TableCell>
+                <TableCell>{documentDetail.expireddate}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Name Of Employer</TableCell>
+                <TableCell>{documentDetail.nameOfEmployer}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Address Of Employer</TableCell>
+                <TableCell>{documentDetail.addressOfEmployer}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Country</TableCell>
+                <TableCell>{documentDetail.country}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">State</TableCell>
+                <TableCell>{documentDetail.regionStateOrProvince}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">City/Town</TableCell>
+                <TableCell>{documentDetail.cityOrTown}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Sub City</TableCell>
+                <TableCell>{documentDetail.subCity}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">District</TableCell>
+                <TableCell>{documentDetail.weredaOrDistrict}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Village</TableCell>
+                <TableCell>{documentDetail.kebeleOrVillage}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Telephone</TableCell>
+                <TableCell>{documentDetail.phoneNumber}</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
         </CardContent>
       </Card>
-    </div>
-  );
-};
-
-// Component for individual detail items
-const DocumentDetailItem = ({ label, value }: { label: string; value: string }) => {
-  return (
-    <div className="flex flex-col p-3 bg-white rounded-md border border-gray-200 hover:bg-gray-50 transition-colors">
-      <span className="text-sm font-medium text-gray-500">{label}</span>
-      <span className="text-base font-semibold mt-1 text-gray-800">{value}</span>
     </div>
   );
 };
